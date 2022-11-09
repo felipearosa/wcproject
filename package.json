@@ -1,0 +1,19 @@
+{
+  "name": "wcproject",
+  "version": "1.0.0",
+  "description": "Project for guessing WC results",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felipearosa/wcproject.git"
+  },
+  "author": "Felipe Arosa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/felipearosa/wcproject/issues"
+  },
+  "homepage": "https://github.com/felipearosa/wcproject#readme"
+}
