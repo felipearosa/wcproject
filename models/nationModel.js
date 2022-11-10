@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const nationSchema = new mongoose.Schema({
   name: String,
   flag: String,
+  code: String,
+  group: String,
   // players: [
   //   {
   //     type: mongoose.Schema.ObjectId,
