@@ -5,7 +5,7 @@ const app = express();
 
 const nationRouter = require('./routes/nationRouter')
 
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'public')));
 
 // const limiter = rateLimit({
 //   max: 100,

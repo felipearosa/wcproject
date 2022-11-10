@@ -1,0 +1,82 @@
+body{
+  margin: 0;
+  background: linear-gradient(to right, rgba(152,0,0,1) 32%, rgba(255,255,255,1) 100%);
+  box-sizing: border-box;
+}
+
+p{
+  margin: 0;
+}
+
+.box{
+  background-color: rgb(240, 240, 240);
+  margin: 10px 10px;
+  padding: 10px 50px;
+  display: flex;
+  gap: 10px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 4px 2px #00000020;
+}
+
+.group-stage{
+  width: 80%;
+  background-color: #ffffff;
+  margin: 20px auto 0 auto;
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+}
+
+.match-line{
+  display: flex;
+  justify-content: center
+}
+
+.matches{
+  flex-basis:60%;
+  display: block;
+}
+
+.nation{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.match-image{
+  width:25px
+}
+
+.score{
+  display: flex;
+  gap: 10px;
+}
+
+.score > input{
+  width:20px
+}
+
+.group{
+  flex-basis:40%
+}
+
+.box--group{
+  text-align: left;
+  width: 100%;
+  margin: 10px 20px;
+  display: block;
+  padding: 10px 30px;
+}
+
+.table-group{
+  width: 100%;
+  table-layout: fixed;
+}
+
+.box--group > h3{
+  margin: 10px 0 5px 0
+}
+
+tr th:first-child {
+  width: 150px;
+}
