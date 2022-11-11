@@ -117,7 +117,48 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"index.js":[function(require,module,exports) {
+})({"tableLogic.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.adjustTable = void 0;
+var adjustTable = function adjustTable(guessOne, guessTwo, guesses, groupTable) {
+  var firstTeam = groupTable.querySelector("[data-id=\"".concat(guessOne.dataset.id, "\"]"));
+  var secondTeam = groupTable.querySelector("[data-id=\"".concat(guessTwo.dataset.id, "\"]"));
+
+  //if nothing changes
+  if (guessOne.dataset.result === 'win') {
+    return;
+  }
+
+  //if it were a tie, remove tie from table
+  if (guessOne.dataset.result === 'tie') {
+    guesses.forEach(function (guess) {
+      var team = groupTable.querySelector("[data-id=\"".concat(guess.dataset.id, "\"]"));
+      team.children[2].textContent = team.children[2].textContent * 1 - 1;
+      team.children[4].textContent = team.children[4].textContent * 1 - 1;
+    });
+  }
+
+  // if first guess used to lose, remove points from the other team
+  if (guessOne.dataset.result === 'lose') {
+    firstTeam.children[3].textContent = firstTeam.children[3].textContent * 1 - 1;
+    secondTeam.children[1].textContent = secondTeam.children[1].textContent * 1 - 1;
+    secondTeam.children[4].textContent = secondTeam.children[4].textContent * 1 - 3;
+  }
+  firstTeam.children[1].textContent = firstTeam.children[1].textContent * 1 + 1;
+  firstTeam.children[4].textContent = firstTeam.children[4].textContent * 1 + 3;
+  secondTeam.children[3].textContent = firstTeam.children[3].textContent * 1 + 1;
+  guessOne.dataset.result = 'win';
+  guessTwo.dataset.result = 'lose';
+};
+exports.adjustTable = adjustTable;
+},{}],"index.js":[function(require,module,exports) {
+"use strict";
+
+var _tableLogic = require("./tableLogic");
 var matches = document.querySelectorAll('.match');
 var inputs = document.querySelectorAll('input');
 matches.forEach(function (match) {
@@ -125,9 +166,9 @@ matches.forEach(function (match) {
     var guesses = match.querySelectorAll('input');
     var groupTable = match.parentNode.parentNode.nextElementSibling;
     if (guesses[0].value > guesses[1].value) {
-      adjustTable(guesses[0], guesses[1], guesses, groupTable);
+      (0, _tableLogic.adjustTable)(guesses[0], guesses[1], guesses, groupTable);
     } else if (guesses[0].value < guesses[1].value) {
-      adjustTable(guesses[1], guesses[0], guesses, groupTable);
+      (0, _tableLogic.adjustTable)(guesses[1], guesses[0], guesses, groupTable);
     } else {
       if (guesses[0].dataset.result === 'tie') {
         return;
@@ -149,31 +190,7 @@ matches.forEach(function (match) {
     }
   });
 });
-var adjustTable = function adjustTable(guessOne, guessTwo, guesses, groupTable) {
-  var firstTeam = groupTable.querySelector("[data-id=\"".concat(guessOne.dataset.id, "\"]"));
-  var secondTeam = groupTable.querySelector("[data-id=\"".concat(guessTwo.dataset.id, "\"]"));
-  if (guessOne.dataset.result === 'win') {
-    return;
-  }
-  if (guessOne.dataset.result === 'tie') {
-    guesses.forEach(function (guess) {
-      var team = groupTable.querySelector("[data-id=\"".concat(guess.dataset.id, "\"]"));
-      team.children[2].textContent = team.children[2].textContent * 1 - 1;
-      team.children[4].textContent = team.children[4].textContent * 1 - 1;
-    });
-  }
-  if (guessOne.dataset.result === 'lose') {
-    firstTeam.children[3].textContent = firstTeam.children[3].textContent * 1 - 1;
-    secondTeam.children[1].textContent = secondTeam.children[1].textContent * 1 - 1;
-    secondTeam.children[4].textContent = secondTeam.children[4].textContent * 1 - 3;
-  }
-  firstTeam.children[1].textContent = firstTeam.children[1].textContent * 1 + 1;
-  firstTeam.children[4].textContent = firstTeam.children[4].textContent * 1 + 3;
-  secondTeam.children[3].textContent = firstTeam.children[3].textContent * 1 + 1;
-  guessOne.dataset.result = 'win';
-  guessTwo.dataset.result = 'lose';
-};
-},{}],"../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./tableLogic":"tableLogic.js"}],"../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
