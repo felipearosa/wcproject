@@ -123,7 +123,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.tableLogic = void 0;
+exports.tableLogic = exports.adjustTable = void 0;
 var adjustTable = function adjustTable(guessOne, guessTwo, guesses, groupTable) {
   var firstTeam = groupTable.querySelector("[data-id=\"".concat(guessOne.dataset.id, "\"]"));
   var secondTeam = groupTable.querySelector("[data-id=\"".concat(guessTwo.dataset.id, "\"]"));
@@ -154,6 +154,7 @@ var adjustTable = function adjustTable(guessOne, guessTwo, guesses, groupTable) 
   guessOne.dataset.result = 'win';
   guessTwo.dataset.result = 'lose';
 };
+exports.adjustTable = adjustTable;
 var tableLogic = function tableLogic(match) {
   var guesses = match.querySelectorAll('input');
   var groupTable = match.parentNode.parentNode.nextElementSibling;
@@ -193,31 +194,7 @@ var _tableLogic = require("./tableLogic");
 var matches = document.querySelectorAll('.match');
 matches.forEach(function (match) {
   match.addEventListener('change', function () {
-    var guesses = match.querySelectorAll('input');
-    var groupTable = match.parentNode.parentNode.nextElementSibling;
-    if (guesses[0].value > guesses[1].value) {
-      (0, _tableLogic.adjustTable)(guesses[0], guesses[1], guesses, groupTable);
-    } else if (guesses[0].value < guesses[1].value) {
-      (0, _tableLogic.adjustTable)(guesses[1], guesses[0], guesses, groupTable);
-    } else {
-      if (guesses[0].dataset.result === 'tie') {
-        return;
-      }
-      guesses.forEach(function (guess) {
-        var team = groupTable.querySelector("[data-id=\"".concat(guess.dataset.id, "\"]"));
-        if (guess.dataset.result === 'lose') {
-          team.children[3].textContent = team.children[3].textContent * 1 - 1;
-        }
-        if (guess.dataset.result === 'win') {
-          team.children[1].textContent = team.children[1].textContent * 1 - 1;
-          team.children[4].textContent = team.children[4].textContent * 1 - 3;
-        }
-        team.children[2].textContent = team.children[2].textContent * 1 + 1;
-        team.children[4].textContent = team.children[4].textContent * 1 + 1;
-      });
-      guesses[0].dataset.result = 'tie';
-      guesses[1].dataset.result = 'tie';
-    }
+    (0, _tableLogic.tableLogic)(match);
   });
 });
 },{"./tableLogic":"tableLogic.js"}],"../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {

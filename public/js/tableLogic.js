@@ -1,4 +1,4 @@
-const adjustTable = (guessOne, guessTwo, guesses, groupTable) => {
+export const adjustTable = (guessOne, guessTwo, guesses, groupTable) => {
   const firstTeam = groupTable.querySelector(`[data-id="${guessOne.dataset.id}"]`);
   const secondTeam = groupTable.querySelector(`[data-id="${guessTwo.dataset.id}"]`);
 
