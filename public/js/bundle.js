@@ -123,7 +123,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.adjustTable = void 0;
+exports.tableLogic = void 0;
 var adjustTable = function adjustTable(guessOne, guessTwo, guesses, groupTable) {
   var firstTeam = groupTable.querySelector("[data-id=\"".concat(guessOne.dataset.id, "\"]"));
   var secondTeam = groupTable.querySelector("[data-id=\"".concat(guessTwo.dataset.id, "\"]"));
@@ -154,13 +154,43 @@ var adjustTable = function adjustTable(guessOne, guessTwo, guesses, groupTable) 
   guessOne.dataset.result = 'win';
   guessTwo.dataset.result = 'lose';
 };
-exports.adjustTable = adjustTable;
+var tableLogic = function tableLogic(match) {
+  var guesses = match.querySelectorAll('input');
+  var groupTable = match.parentNode.parentNode.nextElementSibling;
+
+  //first team wins
+  if (guesses[0].value > guesses[1].value) {
+    adjustTable(guesses[0], guesses[1], guesses, groupTable);
+    //second team wins
+  } else if (guesses[0].value < guesses[1].value) {
+    adjustTable(guesses[1], guesses[0], guesses, groupTable);
+    //tie
+  } else {
+    if (guesses[0].dataset.result === 'tie') {
+      return;
+    }
+    guesses.forEach(function (guess) {
+      var team = groupTable.querySelector("[data-id=\"".concat(guess.dataset.id, "\"]"));
+      if (guess.dataset.result === 'lose') {
+        team.children[3].textContent = team.children[3].textContent * 1 - 1;
+      }
+      if (guess.dataset.result === 'win') {
+        team.children[1].textContent = team.children[1].textContent * 1 - 1;
+        team.children[4].textContent = team.children[4].textContent * 1 - 3;
+      }
+      team.children[2].textContent = team.children[2].textContent * 1 + 1;
+      team.children[4].textContent = team.children[4].textContent * 1 + 1;
+    });
+    guesses[0].dataset.result = 'tie';
+    guesses[1].dataset.result = 'tie';
+  }
+};
+exports.tableLogic = tableLogic;
 },{}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _tableLogic = require("./tableLogic");
 var matches = document.querySelectorAll('.match');
-var inputs = document.querySelectorAll('input');
 matches.forEach(function (match) {
   match.addEventListener('change', function () {
     var guesses = match.querySelectorAll('input');

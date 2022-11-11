@@ -1,7 +1,6 @@
 import { adjustTable } from "./tableLogic";
 
 const matches = document.querySelectorAll('.match');
-const inputs = document.querySelectorAll('input');
 
 matches.forEach(match => {
   match.addEventListener('change', () => {
