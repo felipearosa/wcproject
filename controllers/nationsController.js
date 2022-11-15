@@ -8,7 +8,9 @@ exports.getAllNations = catchAsync(async (req, res) => {
   res.status(200).json({
     status: 'sucess',
     results: nations.length,
-    nations
+    data:{
+      nations
+    }
   })
 })
 
