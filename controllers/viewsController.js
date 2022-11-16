@@ -6,7 +6,7 @@ const Match = require('./../models/matchModel');
 
 exports.getHome = catchAsync(async (req, res) => {
   const nations = await Nation.find();
-  const matches = await Match.find();
+  const matches = await Match.find().sort([['date', 1]]);
 
   const groups = ["A", "B", "C", "D", "E", "F", "G", "H"]
 
