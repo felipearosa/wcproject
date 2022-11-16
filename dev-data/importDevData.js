@@ -3,6 +3,7 @@ const fs = require('fs');
 const dotenv = require('dotenv');
 const Nation = require('./../models/nationModel');
 const { dirname } = require('path');
+const Match = require('../models/matchModel');
 
 dotenv.config ({ path: './config.env' });
 
@@ -25,6 +26,7 @@ const importData = async () => {
 const deleteData = async () => {
   try{
     await Nation.deleteMany();
+    await Match.deleteMany();
     console.log('DB deleted');
     process.exit();
   } catch (error) {

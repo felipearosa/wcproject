@@ -6,7 +6,7 @@ exports.getAllMatches = catchAsync(async (req,res) => {
   const matches = await Match.find();
 
   res.status(200).json({
-    status: success,
+    status: 'success',
     results: matches.length,
     data: {
       matches
