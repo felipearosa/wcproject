@@ -5,6 +5,10 @@ const matchScheema = new mongoose.Schema({
     type: mongoose.Schema.ObjectId,
     ref: 'Nation'
   },
+  nationB: {
+    type: mongoose.Schema.ObjectId,
+    ref: 'Nation'
+  },
   date: Date,
   group: String
 });

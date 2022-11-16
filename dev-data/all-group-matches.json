@@ -1,0 +1,242 @@
+[
+  {
+    "game": "QAT ECU",
+    "date": "20 Nov 2022 13:00:00 GMT-0300",
+    "group": "A"
+  },
+  {
+    "game": "ENG IRN",
+    "date": "21 Nov 2022 10:00:00 GMT-0300",
+    "group": "B"
+  },
+  {
+    "game": "SEN NED",
+    "date": "21 Nov 2022 13:00:00 GMT-0300",
+    "group": "A"
+  },
+  {
+    "game": "USA WAL",
+    "date": "21 Nov 2022 16:00:00 GMT-0300",
+    "group": "A"
+  },
+  {
+    "game": "ARG KSA",
+    "date": "22 Nov 2022 07:00:00 GMT-0300",
+    "group": "C"
+  },
+  {
+    "game": "DEN TUN",
+    "date": "22 Nov 2022 10:00:00 GMT-0300",
+    "group": "D"
+  },
+  {
+    "game": "MEX POL",
+    "date": "22 Nov 2022 13:00:00 GMT-0300",
+    "group": "C"
+  },
+  {
+    "game": "FRA AUS",
+    "date": "22 Nov 2022 16:00:00 GMT-0300",
+    "group": "D"
+  },
+  {
+    "game": "MAR CRO",
+    "date": "23 Nov 2022 07:00:00 GMT-0300",
+    "group": "F"
+  },
+  {
+    "game": "GER JPN",
+    "date": "23 Nov 2022 10:00:00 GMT-0300",
+    "group": "E"
+  },
+  {
+    "game": "ESP CRC",
+    "date": "23 Nov 2022 13:00:00 GMT-0300",
+    "group": "E"
+  },
+  {
+    "game": "BEL CAN",
+    "date": "23 Nov 2022 16:00:00 GMT-0300",
+    "group": "F"
+  },
+  {
+    "game": "SUI CMR",
+    "date": "24 Nov 2022 07:00:00 GMT-0300",
+    "group": "G"
+  },
+  {
+    "game": "URU KOR",
+    "date": "24 Nov 2022 10:00:00 GMT-0300",
+    "group": "H"
+  },
+  {
+    "game": "POR GHA",
+    "date": "24 Nov 2022 13:00:00 GMT-0300",
+    "group": "H"
+  },
+  {
+    "game": "BRA SRB",
+    "date": "24 Nov 2022 16:00:00 GMT-0300",
+    "group": "G"
+  },
+  {
+    "game": "WAL IRN",
+    "date": "25 Nov 2022 07:00:00 GMT-0300",
+    "group": "B"
+  },
+  {
+    "game": "QAT SEN",
+    "date": "25 Nov 2022 10:00:00 GMT-0300",
+    "group": "A"
+  },
+  {
+    "game": "NED ECU",
+    "date": "25 Nov 2022 13:00:00 GMT-0300",
+    "group": "A"
+  },
+  {
+    "game": "ENG USA",
+    "date": "25 Nov 2022 16:00:00 GMT-0300",
+    "group": "B"
+  },
+  {
+    "game": "TUN AUS",
+    "date": "26 Nov 2022 07:00:00 GMT-0300",
+    "group": "D"
+  },
+  {
+    "game": "POL KSA",
+    "date": "26 Nov 2022 10:00:00 GMT-0300",
+    "group": "C"
+  },
+  {
+    "game": "FRA DEN",
+    "date": "26 Nov 2022 13:00:00 GMT-0300",
+    "group": "D"
+  },
+  {
+    "game": "ARG MEX",
+    "date": "26 Nov 2022 16:00:00 GMT-0300",
+    "group": "C"
+  },
+  {
+    "game": "JPN CRC",
+    "date": "27 Nov 2022 07:00:00 GMT-0300",
+    "group": "E"
+  },
+  {
+    "game": "BEL MAR",
+    "date": "27 Nov 2022 10:00:00 GMT-0300",
+    "group": "F"
+  },
+  {
+    "game": "CRO CAN",
+    "date": "27 Nov 2022 13:00:00 GMT-0300",
+    "group": "F"
+  },
+  {
+    "game": "ESP GER",
+    "date": "27 Nov 2022 16:00:00 GMT-0300",
+    "group": "E"
+  },
+  {
+    "game": "CMR SRB",
+    "date": "28 Nov 2022 07:00:00 GMT-0300",
+    "group": "G"
+  },
+  {
+    "game": "KOR GHA",
+    "date": "28 Nov 2022 10:00:00 GMT-0300",
+    "group": "H"
+  },
+  {
+    "game": "BRA SUI",
+    "date": "28 Nov 2022 13:00:00 GMT-0300",
+    "group": "G"
+  },
+  {
+    "game": "POR URU",
+    "date": "28 Nov 2022 16:00:00 GMT-0300",
+    "group": "H"
+  },
+  {
+    "game": "NED QAT",
+    "date": "29 Nov 2022 12:00:00 GMT-0300",
+    "group": "A"
+  },
+  {
+    "game": "ECU SEN",
+    "date": "29 Nov 2022 12:00:00 GMT-0300",
+    "group": "A"
+  },
+  {
+    "game": "IRN USA",
+    "date": "29 Nov 2022 16:00:00 GMT-0300",
+    "group": "B"
+  },
+  {
+    "game": "WAL ENG",
+    "date": "29 Nov 2022 16:00:00 GMT-0300",
+    "group": "B"
+  },
+  {
+    "game": "TUN FRA",
+    "date": "30 Nov 2022 12:00:00 GMT-0300",
+    "group": "D"
+  },
+  {
+    "game": "AUS DEN",
+    "date": "30 Nov 2022 12:00:00 GMT-0300",
+    "group": "D"
+  },
+  {
+    "game": "KSA MEX",
+    "date": "30 Nov 2022 16:00:00 GMT-0300",
+    "group": "C"
+  },
+  {
+    "game": "POL ARG",
+    "date": "30 Nov 2022 16:00:00 GMT-0300",
+    "group": "C"
+  },
+  {
+    "game": "CAN MAR",
+    "date": "01 Dec 2022 12:00:00 GMT-0300",
+    "group": "F"
+  },
+  {
+    "game": "CRO BEL",
+    "date": "01 Dec 2022 12:00:00 GMT-0300",
+    "group": "F"
+  },
+  {
+    "game": "CRC GER",
+    "date": "01 Dec 2022 16:00:00 GMT-0300",
+    "group": "E"
+  },
+  {
+    "game": "JPN ESP",
+    "date": "01 Dec 2022 16:00:00 GMT-0300",
+    "group": "E"
+  },
+  {
+    "game": "KOR POR",
+    "date": "02 Dec 2022 12:00:00 GMT-0300",
+    "group": "H"
+  },
+  {
+    "game": "GHA URU",
+    "date": "02 Dec 2022 12:00:00 GMT-0300",
+    "group": "H"
+  },
+  {
+    "game": "CMR BRA",
+    "date": "02 Dec 2022 16:00:00 GMT-0300",
+    "group": "G"
+  },
+  {
+    "game": "SRB SUI",
+    "date": "02 Dec 2022 16:00:00 GMT-0300",
+    "group": "G"
+  }
+]
