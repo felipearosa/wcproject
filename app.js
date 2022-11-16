@@ -3,10 +3,16 @@ const express = require('express');
 
 const app = express();
 
-const nationRouter = require('./routes/nationRouter')
-const matchRouter = require('./routes/matchRouter')
+const nationRouter = require('./routes/nationRouter');
+const matchRouter = require('./routes/matchRouter');
+const viewRouter = require('./routes/viewRouter')
+
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'views'))
 
 app.use(express.static(path.join(__dirname, 'public')));
+
+
 
 // const limiter = rateLimit({
 //   max: 100,
@@ -29,5 +35,6 @@ app.use((req, res, next) => {
 // Routes
 app.use('/api/v1/nations', nationRouter);
 app.use('/api/v1/matches', matchRouter);
+app.use('/', viewRouter);
 
 module.exports = app;
