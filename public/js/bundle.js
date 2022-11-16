@@ -157,7 +157,9 @@ var adjustTable = function adjustTable(guessOne, guessTwo, guesses, groupTable) 
 exports.adjustTable = adjustTable;
 var tableLogic = function tableLogic(match) {
   var guesses = match.querySelectorAll('input');
-  var groupTable = match.parentNode.parentNode.nextElementSibling;
+  console.log(guesses);
+  var groupTable = match.parentNode.nextElementSibling;
+  console.log(groupTable);
 
   //first team wins
   if (guesses[0].value > guesses[1].value) {
@@ -222,7 +224,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39117" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42687" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

@@ -1,0 +1,9 @@
+include _match
+
+mixin group(group)
+  //- h1= JSON.stringify(matchesAndNations[0])
+  .group-stage
+    .matches
+      .match-line
+        each match in group.matches
+          +match(match)

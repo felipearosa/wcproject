@@ -13,6 +13,15 @@ const matchScheema = new mongoose.Schema({
   group: String
 });
 
+matchScheema.pre(/^find/, function(next){
+  this.populate({
+    path: 'nationA nationB',
+    select: 'code flag'
+  })
+  next();
+})
+
+
 const Match = new mongoose.model('Match', matchScheema);
 
 module.exports = Match;

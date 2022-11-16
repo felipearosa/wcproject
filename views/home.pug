@@ -1,105 +1,72 @@
 extends base
+include _match
 
 block content
+  //- h1= JSON.stringify(matchesAndNations[0])
   .group-stage
     .matches
       .match-line
-        .box.match
-          .nation
-            img.match-image(src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/100px-Flag_of_Switzerland.svg.png")
-            p SWI
-            input(data-id="4", data-result="null", type="number")
-          p x
-          .nation
-            input(data-id="4", data-result="null", type="number")
-            img.match-image(src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Flag_of_Cameroon.svg/125px-Flag_of_Cameroon.svg.png")
-            p CAM
-        .box.match
-          .nation
-            img.match-image(src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/100px-Flag_of_Switzerland.svg.png")
-            p SWI
-            input(data-id="4", data-result="null", type="number")
-          p x
-          .nation
-            input(data-id="4", data-result="null", type="number")
-            img.match-image(src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Flag_of_Cameroon.svg/125px-Flag_of_Cameroon.svg.png")
-            p CAM
-      .match-line
-        .box.match
-          .nation
-            img.match-image(src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/100px-Flag_of_Switzerland.svg.png")
-            p SWI
-            input(data-id="4", data-result="null", type="number")
-          p x
-          .nation
-            input(data-id="4", data-result="null", type="number")
-            img.match-image(src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Flag_of_Cameroon.svg/125px-Flag_of_Cameroon.svg.png")
-            p CAM
-        .box.match
-          .nation
-            img.match-image(src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/100px-Flag_of_Switzerland.svg.png")
-            p SWI
-            input(data-id="4", data-result="null", type="number")
-          p x
-          .nation
-            input(data-id="4", data-result="null", type="number")
-            img.match-image(src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Flag_of_Cameroon.svg/125px-Flag_of_Cameroon.svg.png")
-            p CAM
-      .match-line
-        .box.match
-          .nation
-            img.match-image(src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/100px-Flag_of_Switzerland.svg.png")
-            p SWI
-            input(data-id="4", data-result="null", type="number")
-          p x
-          .nation
-            input(data-id="4", data-result="null", type="number")
-            img.match-image(src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Flag_of_Cameroon.svg/125px-Flag_of_Cameroon.svg.png")
-            p CAM
-        .box.match
-          .nation
-            img.match-image(src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/100px-Flag_of_Switzerland.svg.png")
-            p SWI
-            input(data-id="4", data-result="null", type="number")
-          p x
-          .nation
-            input(data-id="4", data-result="null", type="number")
-            img.match-image(src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Flag_of_Cameroon.svg/125px-Flag_of_Cameroon.svg.png")
-            p CAM
-
-
-
-
-    .box.box--group
-      h3 Group A
-      table.table-group
-        tr
-          th Team
-          th W
-          th D
-          th L
-          th Pts
-        tr(data-id="1")
-          td Brazil
-          td 0
-          td 0
-          td 0
-          td 0
-        tr(data-id="2")
-          td Camaroon
-          td 0
-          td 0
-          td 0
-          td 0
-        tr(data-id="3")
-          td Serbia
-          td 0
-          td 0
-          td 0
-          td 0
-        tr(data-id="4")
-          td Switzerland
-          td 0
-          td 0
-          td 0
-          td 0
+        +match(matchesAndNations[0].matches[0])
+        +match(matchesAndNations[0].matches[0])
+      //-   .box.match
+      //-     .nation
+      //-       img.match-image(src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/100px-Flag_of_Switzerland.svg.png")
+      //-       p SWI
+      //-       input(data-id="4", data-result="null", type="number")
+      //-     p x
+      //-     .nation
+      //-       input(data-id="4", data-result="null", type="number")
+      //-       img.match-image(src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Flag_of_Cameroon.svg/125px-Flag_of_Cameroon.svg.png")
+      //-       p CAM
+      //-   .box.match
+      //-     .nation
+      //-       img.match-image(src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/100px-Flag_of_Switzerland.svg.png")
+      //-       p SWI
+      //-       input(data-id="4", data-result="null", type="number")
+      //-     p x
+      //-     .nation
+      //-       input(data-id="4", data-result="null", type="number")
+      //-       img.match-image(src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Flag_of_Cameroon.svg/125px-Flag_of_Cameroon.svg.png")
+      //-       p CAM
+      //- .match-line
+      //-   .box.match
+      //-     .nation
+      //-       img.match-image(src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/100px-Flag_of_Switzerland.svg.png")
+      //-       p SWI
+      //-       input(data-id="4", data-result="null", type="number")
+      //-     p x
+      //-     .nation
+      //-       input(data-id="4", data-result="null", type="number")
+      //-       img.match-image(src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Flag_of_Cameroon.svg/125px-Flag_of_Cameroon.svg.png")
+      //-       p CAM
+      //-   .box.match
+      //-     .nation
+      //-       img.match-image(src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/100px-Flag_of_Switzerland.svg.png")
+      //-       p SWI
+      //-       input(data-id="4", data-result="null", type="number")
+      //-     p x
+      //-     .nation
+      //-       input(data-id="4", data-result="null", type="number")
+      //-       img.match-image(src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Flag_of_Cameroon.svg/125px-Flag_of_Cameroon.svg.png")
+      //-       p CAM
+      //- .match-line
+      //-   .box.match
+      //-     .nation
+      //-       img.match-image(src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/100px-Flag_of_Switzerland.svg.png")
+      //-       p SWI
+      //-       input(data-id="4", data-result="null", type="number")
+      //-     p x
+      //-     .nation
+      //-       input(data-id="4", data-result="null", type="number")
+      //-       img.match-image(src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Flag_of_Cameroon.svg/125px-Flag_of_Cameroon.svg.png")
+      //-       p CAM
+      //-   .box.match
+      //-     .nation
+      //-       img.match-image(src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/100px-Flag_of_Switzerland.svg.png")
+      //-       p SWI
+      //-       input(data-id="4", data-result="null", type="number")
+      //-     p x
+      //-     .nation
+      //-       input(data-id="4", data-result="null", type="number")
+      //-       img.match-image(src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Flag_of_Cameroon.svg/125px-Flag_of_Cameroon.svg.png")
+      //-       p CAM
