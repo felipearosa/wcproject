@@ -1,0 +1,10 @@
+include _match
+include _groupTable
+
+mixin group(group)
+  //- h1= JSON.stringify(matchesAndNations[0])
+  .group-stage
+    .matches
+      each match in group.matches
+        +match(match)
+    +groupTable(group)

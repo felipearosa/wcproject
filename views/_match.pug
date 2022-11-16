@@ -1,0 +1,11 @@
+mixin match(match)
+  .box.match
+    .nation
+      img.match-image(src=`${match.nationA.flag}`)
+      p= match.nationA.code
+      input(data-id=`${match.nationA.code}`, data-result="null", type="number")
+    p x
+    .nation
+      input(data-id=`${match.nationB.code}`, data-result="null", type="number")
+      img.match-image(src=`${match.nationB.flag}`)
+      p= match.nationB.code
