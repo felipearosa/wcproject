@@ -3,7 +3,7 @@ mixin match(match)
     .nation
       img.match-image(src=`${match.nationA.flag}`)
       p= match.nationA.code
-      input(data-id=`${match.nationB.code}`, data-result="null", type="number")
+      input(data-id=`${match.nationA.code}`, data-result="null", type="number")
     p x
     .nation
       input(data-id=`${match.nationB.code}`, data-result="null", type="number")

@@ -36,9 +36,7 @@ export const adjustTable = (guessOne, guessTwo, guesses, groupTable) => {
 
 export const tableLogic = match => {
   const guesses = match.querySelectorAll('input');
-  console.log(guesses);
   const groupTable = match.parentNode.nextElementSibling;
-  console.log(groupTable);
 
 
 

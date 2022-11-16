@@ -1,0 +1,17 @@
+mixin groupTable(group)
+  .box.box--group
+    h3= `Group ${group.group}`
+    table.table-group
+      tr
+        th Team
+        th W
+        th D
+        th L
+        th Pts
+      each nation in group.nations
+        tr(data-id=`${nation.code}`)
+          td= nation.name
+          td 0
+          td 0
+          td 0
+          td 0

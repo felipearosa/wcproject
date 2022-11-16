@@ -157,9 +157,7 @@ var adjustTable = function adjustTable(guessOne, guessTwo, guesses, groupTable) 
 exports.adjustTable = adjustTable;
 var tableLogic = function tableLogic(match) {
   var guesses = match.querySelectorAll('input');
-  console.log(guesses);
   var groupTable = match.parentNode.nextElementSibling;
-  console.log(groupTable);
 
   //first team wins
   if (guesses[0].value > guesses[1].value) {
