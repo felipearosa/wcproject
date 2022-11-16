@@ -32,13 +32,13 @@
   {
     "name": "Senegal",
     "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Flag_of_Senegal.svg/125px-Flag_of_Senegal.svg.png",
-    "code": "SN",
+    "code": "SEN",
     "group": "A"
   },
   {
     "name": "Nederlands",
     "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/125px-Flag_of_the_Netherlands.svg.png",
-    "code": "NL",
+    "code": "NED",
     "group": "A"
   },
   {

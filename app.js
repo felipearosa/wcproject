@@ -4,6 +4,7 @@ const express = require('express');
 const app = express();
 
 const nationRouter = require('./routes/nationRouter')
+const matchRouter = require('./routes/matchRouter')
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -27,5 +28,6 @@ app.use((req, res, next) => {
 
 // Routes
 app.use('/api/v1/nations', nationRouter);
+app.use('/api/v1/matches', matchRouter);
 
 module.exports = app;
