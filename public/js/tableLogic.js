@@ -38,8 +38,6 @@ export const tableLogic = match => {
   const guesses = match.querySelectorAll('input');
   const groupTable = match.parentNode.nextElementSibling;
 
-
-
   //first team wins
   if (guesses[0].value > guesses[1].value) {
     adjustTable(guesses[0], guesses[1], guesses, groupTable);
@@ -71,4 +69,48 @@ export const tableLogic = match => {
     guesses[0].dataset.result='tie';
     guesses[1].dataset.result='tie';
   }
+
+  adjustPosition(groupTable.querySelector('table'));
+}
+
+export const adjustPosition = table => {
+  const tableHeader = table.firstChild.firstChild.innerHTML
+  console.log(tableHeader)
+  const nations = table.querySelectorAll("tr:not(:first-child)");
+
+  let arrPosition = []
+
+  nations.forEach(nation => {
+    const nationInfo = nation.querySelectorAll('td');
+    const pointsText = nationInfo[nationInfo.length- 1];
+    const points = +pointsText.textContent
+    if (arrPosition.length === 0) {
+      arrPosition.push(nation)
+    } else {
+      for (let [i, positionedNation] of arrPosition.entries()) {
+        if (nation.dataset.id === positionedNation.dataset.id) return;
+        if (arrPosition.length === 4 ) return;
+
+        const positionedInfo = positionedNation.querySelectorAll('td');
+        const  positionedPointsText = positionedInfo[positionedInfo.length- 1];
+        const positionedPoints = +positionedPointsText.textContent
+
+        if(points > positionedPoints){
+          arrPosition.splice(i, 0, nation);
+          break;
+        } else if (points === positionedPoints || arrPosition.length - i  === 1 ) {
+          arrPosition.splice(i + 1, 0, nation);
+        }
+      }
+    }
+  })
+
+  const finalPosition = arrPosition.map(el => el.outerHTML);
+  console.log(finalPosition.join(""));
+  console.log(finalPosition);
+
+  console.log('fvweew', nations);
+
+  table.innerHTML = ""
+  table.innerHTML = `${tableHeader} ${finalPosition.join("")}`
 }

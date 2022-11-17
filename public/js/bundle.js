@@ -123,7 +123,14 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.tableLogic = exports.adjustTable = void 0;
+exports.tableLogic = exports.adjustTable = exports.adjustPosition = void 0;
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 var adjustTable = function adjustTable(guessOne, guessTwo, guesses, groupTable) {
   var firstTeam = groupTable.querySelector("[data-id=\"".concat(guessOne.dataset.id, "\"]"));
   var secondTeam = groupTable.querySelector("[data-id=\"".concat(guessTwo.dataset.id, "\"]"));
@@ -185,8 +192,57 @@ var tableLogic = function tableLogic(match) {
     guesses[0].dataset.result = 'tie';
     guesses[1].dataset.result = 'tie';
   }
+  adjustPosition(groupTable.querySelector('table'));
 };
 exports.tableLogic = tableLogic;
+var adjustPosition = function adjustPosition(table) {
+  var tableHeader = table.firstChild.firstChild.innerHTML;
+  console.log(tableHeader);
+  var nations = table.querySelectorAll("tr:not(:first-child)");
+  var arrPosition = [];
+  nations.forEach(function (nation) {
+    var nationInfo = nation.querySelectorAll('td');
+    var pointsText = nationInfo[nationInfo.length - 1];
+    var points = +pointsText.textContent;
+    if (arrPosition.length === 0) {
+      arrPosition.push(nation);
+    } else {
+      var _iterator = _createForOfIteratorHelper(arrPosition.entries()),
+        _step;
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var _step$value = _slicedToArray(_step.value, 2),
+            i = _step$value[0],
+            positionedNation = _step$value[1];
+          if (nation.dataset.id === positionedNation.dataset.id) return;
+          if (arrPosition.length === 4) return;
+          var positionedInfo = positionedNation.querySelectorAll('td');
+          var positionedPointsText = positionedInfo[positionedInfo.length - 1];
+          var positionedPoints = +positionedPointsText.textContent;
+          if (points > positionedPoints) {
+            arrPosition.splice(i, 0, nation);
+            break;
+          } else if (points === positionedPoints || arrPosition.length - i === 1) {
+            arrPosition.splice(i + 1, 0, nation);
+          }
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+    }
+  });
+  var finalPosition = arrPosition.map(function (el) {
+    return el.outerHTML;
+  });
+  console.log(finalPosition.join(""));
+  console.log(finalPosition);
+  console.log('fvweew', nations);
+  table.innerHTML = "";
+  table.innerHTML = "".concat(tableHeader, " ").concat(finalPosition.join(""));
+};
+exports.adjustPosition = adjustPosition;
 },{}],"index.js":[function(require,module,exports) {
 "use strict";
 
@@ -222,7 +278,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42687" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44261" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
